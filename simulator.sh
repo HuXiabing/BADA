@@ -4,9 +4,9 @@ set -e  # Exit on error
 LOCAL_WORK_DIR="$(pwd)"             # Local working directory
 # Default parameters for Python commands
 DEFAULT_MODEL_TYPE="transformer"
-DEFAULT_TRAIN_DATA="datasets/u74.json"
-DEFAULT_VAL_DATA="datasets/u74.json"
-DEFAULT_TEST_DATA="datasets/u74_10.json"
+DEFAULT_TRAIN_DATA="../datasets/u74.json"
+DEFAULT_VAL_DATA="../datasets/u74.json"
+DEFAULT_TEST_DATA="../datasets/u74_10.json"
 DEFAULT_EXPERIMENT_NAME="test"
 DEFAULT_EPOCH=3
 DEFAULT_BATCH_SIZE=8
@@ -76,7 +76,7 @@ Options:
     --help                         Display this help message
 
 Example:
-    $0 --model_type transformer --train_data datasets/u74.json --epoch 5 --batch_size 16 --simulator sifive-u74
+    $0 --model_type transformer --train_data ../datasets/u74.json --epoch 5 --batch_size 16 --simulator sifive-u74
 EOF
     exit 0
 }

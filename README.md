@@ -25,8 +25,9 @@ BADA/
 ├── trainers/               # Training logic
 ├── scripts/                # Utility scripts (training, inference, preprocessing)
 ├── data/                   # Data processing utilities
-├── bada/                   # BO and test generation tools
-└── datasets/               # Training and validation datasets
+└── bada/                   # BO and test generation tools
+datasets/                   # Training and validation datasets
+experiments/                # Experiment logs
 ```
 
 ## Quick Start
@@ -38,6 +39,18 @@ Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+
+### Dataset
+
+Download the dataset from the following link and place it under the `datasets/` directory:
+
+- Dataset: [https://zenodo.org/records/20061407]
+
+To reproduce the paper setting, split the dataset randomly into training, validation, and test sets using the following ratio:
+
+- Training: 800k samples, 89.1%
+- Validation: 50k samples, 5.5%
+- Test: 48.0k samples, 5.4%
 
 ## Execution Modes
 
@@ -187,21 +200,6 @@ experiments/
     ├── logs/
     │   └── experiment.log
     └── test_result.json
-```
-
-## Results Summary
-
-Both scripts provide a detailed summary table at completion:
-
-```
-┌─────────────┬────────────────────────────────────┬─────────────┬─────────┬─────────────┐
-│   Round     │         Experiment Name            │ Validation  │  Epoch  │   Test      │
-│             │                                    │    Loss     │         │    Loss     │
-├─────────────┼────────────────────────────────────┼─────────────┼─────────┼─────────────┤
-│ Initial     │ transformer_20250305_123456        │ 0.123456    │ 15      │ 0.234567    │
-│ Round 1     │ incre_20250305_124512              │ 0.112345    │ 12      │ 0.223456    │
-│ Round 2     │ incre_20250305_125623              │ 0.102345 ★  │ 18      │ 0.213456    │
-└─────────────┴────────────────────────────────────┴─────────────┴─────────┴─────────────┘
 ```
 
 ## Advanced Usage

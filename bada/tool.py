@@ -336,16 +336,6 @@ class RISCVGenerator:
             for variant_idx, instructions in enumerate(variants):
                 actual_deps = self.dependency_analyzer.analyze_dependencies(instructions)
                 sample = {
-                    # 'feature_vector': feature_vector.tolist(),
-                    # 'target_dependencies': {
-                    #     'waw': int(feature_vector[-3]),
-                    #     'raw': int(feature_vector[-2]),
-                    #     'war': int(feature_vector[-1])
-                    # },
-                    # 'actual_dependencies': actual_deps,
-                    # 'dependency_accuracy': self._calculate_dependency_accuracy(
-                    #     feature_vector[-3:], actual_deps
-                    # ),
                     'feature_id': feature_idx,
                     'variant_id': variant_idx,
                     'asm': "\\n".join(instructions),
